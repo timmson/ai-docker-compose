@@ -8,7 +8,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ollama-deepseek-coder-v2
+  IMAGE_NAME: ${{ github.repository_owner }}/ollama-deepseek-coder-v2
+  IMAGE_FOLDER: images/deepseek-coder-v2
 
 jobs:
   build-and-push:
@@ -42,7 +43,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ${{ env.IMAGE_FOLDER }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }} 
