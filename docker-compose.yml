@@ -4,8 +4,6 @@ services:
   ollama:
     image: ghcr.io/timmson/${IMAGE_NAME}
     container_name: ollama
-    volumes:
-      - ollama_data:/root/.ollama
     ports:
       - "${OLLAMA_PORT}:11434"
     restart: always
@@ -20,7 +18,3 @@ services:
     environment:
       - OLLAMA_API_BASE_URL=http://ollama:${OLLAMA_PORT}/api
     restart: always
-
-volumes:
-  ollama_data:
-  # ollama_data: /app/ollama_data
