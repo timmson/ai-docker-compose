@@ -2,8 +2,7 @@ version: '3.8'
 
 services:
   ollama:
-    build:
-      context: ghcr.io/timmson/${IMAGE_NAME}
+    image: ghcr.io/timmson/${IMAGE_NAME}
     container_name: ollama
     volumes:
       - ollama_data:/root/.ollama
@@ -23,5 +22,5 @@ services:
     restart: always
 
 volumes:
-  ollama_data: 
+  ollama_data:
   # ollama_data: /app/ollama_data
