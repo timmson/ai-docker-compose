@@ -2,10 +2,12 @@ version: '3.8'
 
 services:
   ollama:
-    image: ghcr.io/timmson/${IMAGE_NAME}
+    image: timmson/ollama-llama3.1-cpu-only:1.0
     container_name: ollama
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=-1
     ports:
-      - "${OLLAMA_PORT}:11434"
+      - "11434:11434"
     restart: always
 
   webui:
@@ -14,7 +16,8 @@ services:
     depends_on:
       - ollama
     ports:
-      - "${WEBUI_PORT}:8080"
+      - "8080:8080"
     environment:
-      - OLLAMA_API_BASE_URL=http://ollama:11434/api
+      - ENABLE_OPENAI_API=False
+      - OLLAMA_BASE_URL=http://ollama:11434
     restart: always

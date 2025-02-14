@@ -1,11 +1,20 @@
-# Ollama with DeepSeek Coder v2
-
-Docker image with pre-installed model [DeepSeek Coder v2](https://ollama.com/library/deepseek-coder-v2).
+# Ollama with pre-installed models
 
 ## Requirements
 
 - Docker
 - Docker Compose
+
+
+## Build
+
+```bash
+# https://ollama.com/steamdj/llama3.1-cpu-only
+docker build -t timmson/ollama-llama3.1-cpu-only ./images/llama3.1-cpu-only
+
+# https://ollama.com/library/deepseek-coder-v2
+docker build -t timmson/ollama-deepseek-coder-v2 ./images/deepseek-coder-v2
+```
 
 ## Run
 

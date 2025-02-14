@@ -1,7 +1,5 @@
-FROM ollama/ollama:0.5.7
+FROM ollama/ollama:0.5.11
 
-# Предварительная загрузка модели deepseek при сборке образа
-RUN nohup bash -c "ollama serve &" && sleep 5 && ollama pull deepseek-coder-v2:16b
+RUN nohup bash -c "ollama serve &" && sleep 5 && ollama pull steamdj/llama3.1-cpu-only
 
-# Запуск сервера ollama
 CMD ["serve"]
