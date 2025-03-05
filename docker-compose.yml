@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   ollama:
-    image: timmson/qwen2.5-coder-7b:1.0
+    image: timmson/qwen2.5-coder-3b:1.0
     container_name: ollama
     environment:
       - NVIDIA_VISIBLE_DEVICES=-1
