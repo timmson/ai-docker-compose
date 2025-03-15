@@ -1,0 +1,5 @@
+[cuda-rhel7-x86_64]
+name=cuda-rhel7-x86_64
+baseurl=https://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64
+enabled=1
+gpgcheck=0

@@ -1,0 +1,12 @@
+kmod-nvidia-latest-dkms-550.144.03-1.el7.x86_64.rpm
+nvidia-driver-latest-dkms-550.144.03-1.el7.x86_64.rpm
+nvidia-driver-latest-dkms-cuda-550.144.03-1.el7.x86_64.rpm
+nvidia-driver-latest-dkms-cuda-libs-550.144.03-1.el7.x86_64.rpm
+nvidia-driver-latest-dkms-devel-550.144.03-1.el7.x86_64.rpm
+nvidia-driver-latest-dkms-libs-550.144.03-1.el7.x86_64.rpm
+nvidia-driver-latest-dkms-NvFBCOpenGL-550.144.03-1.el7.x86_64.rpm
+nvidia-driver-latest-dkms-NVML-550.144.03-1.el7.x86_64.rpm
+nvidia-modprobe-latest-dkms-550.144.03-1.el7.x86_64.rpm
+nvidia-persistenced-latest-dkms-550.144.03-1.el7.x86_64.rpm
+nvidia-xconfig-latest-dkms-550.144.03-1.el7.x86_64.rpm
+yum-plugin-nvidia-0.5-1.el7.noarch.rpm
