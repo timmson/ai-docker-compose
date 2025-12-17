@@ -24,7 +24,7 @@ docker build -t timmson/qwen2.5-coder-14b:1.0 ./images/qwen2.5-coder-14b
 # https://ollama.com/library/qwen2.5-coder:32b
 docker build -t timmson/qwen2.5-coder-32b:1.0 ./images/qwen2.5-coder-32b
 
- https://ollama.com/library/qwen3-coder:30b
+# https://ollama.com/library/qwen3-coder:30b
 docker build -t timmson/qwen3-coder-30b:1.0 ./images/qwen3-coder-30b
 ```
 
