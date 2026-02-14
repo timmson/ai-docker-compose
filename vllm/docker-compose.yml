@@ -1,7 +1,7 @@
 services:
-  ollama:
-    image: timmson/qwen2.5-coder-3b:vllm
-    container_name: ollama
+  vllm:
+    build:
+      context: .
     ports:
       - "11434:11434"
     restart: always
