@@ -1,6 +1,7 @@
 services:
   ollama:
-    image: timmson/qwen2.5-coder-3b:vllm
+    build:
+      context: qwen3.5-9b/.
     container_name: ollama
     ports:
       - "11434:11434"
