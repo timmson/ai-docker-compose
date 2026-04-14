@@ -14,9 +14,10 @@ if [ -z "$TP_SIZE" ]; then
 fi
 
 # 2. Настройка параметров по умолчанию
-GPU_UTIL=${GPU_UTIL:-0.9}
-MAX_MODEL_LEN=${MAX_MODEL_LEN:-32768}
+GPU_UTIL=${GPU_UTIL:-0.95}
+MAX_MODEL_LEN=${MAX_MODEL_LEN:-16384}
 DTYPE=${DTYPE:-"auto"}
+TOOLS=${TOOLS:-"--enable-auto-tool-choice --tool-call-parser hermes"}
 EXTRA_ARGS=${EXTRA_ARGS:-""}
 
 # 3. Вывод итоговой конфигурации для логов
@@ -29,8 +30,10 @@ echo " - Extra arguments: $EXTRA_ARGS"
 # 4. Запуск vLLM
 exec vllm serve "/app/model" \
     --port 11434 \
+    --served-model-name "qwen3.5:4b" \
     --tensor-parallel-size "$TP_SIZE" \
     --gpu-memory-utilization "$GPU_UTIL" \
     --max-model-len "$MAX_MODEL_LEN" \
     --dtype "$DTYPE" \
+    $TOOLS \
     $EXTRA_ARGS
