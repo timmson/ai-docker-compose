@@ -14,10 +14,11 @@ if [ -z "$TP_SIZE" ]; then
 fi
 
 # 2. Настройка параметров по умолчанию
-MODEL="qwen3.5:2b"
+MODEL="qwen3.5:4b"
 PORT=11434
 GPU_UTIL=${GPU_UTIL:-0.8}
 MAX_MODEL_LEN=${MAX_MODEL_LEN:-65536}
+QUANTIZATION=${QUANTIZATION:-"awq"}
 DTYPE=${DTYPE:-"auto"}
 TOOLS=${TOOLS:-"--enable-auto-tool-choice --tool-call-parser hermes"}
 EXTRA_ARGS=${EXTRA_ARGS:-""}
@@ -29,6 +30,7 @@ echo " - Port: $PORT"
 echo " - Tensor Parallel Size: $TP_SIZE"
 echo " - GPU Utilization: $GPU_UTIL"
 echo " - Max Context Length: $MAX_MODEL_LEN"
+echo " - Quantization: $QUANTIZATION"
 echo " - Tools: $TOOLS"
 echo " - Extra arguments: $EXTRA_ARGS"
 
@@ -39,6 +41,7 @@ exec vllm serve "/app/model" \
     --tensor-parallel-size "$TP_SIZE" \
     --gpu-memory-utilization "$GPU_UTIL" \
     --max-model-len "$MAX_MODEL_LEN" \
+    --quantization "$QUANTIZATION" \
     --dtype "$DTYPE" \
     $TOOLS \
     $EXTRA_ARGS
